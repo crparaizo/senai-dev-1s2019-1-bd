@@ -71,3 +71,9 @@ DROP COLUMN UR
 
 SELECT * FROM INSTITUICOES
 
+INSERT INTO TIPOS_EVENTOS (TITULO)
+VALUES ('Tecnologia'),
+		('Redes'),
+		('Desenvolvimento'),
+		('Design')
+

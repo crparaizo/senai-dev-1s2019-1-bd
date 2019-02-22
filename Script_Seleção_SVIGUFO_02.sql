@@ -1,0 +1,55 @@
+﻿select * from convites
+select * from eventos
+select * from USUARIOS
+
+
+
+insert into USUARIOS(NOME, EMAIL, SENHA, TIPO_USUARIO)
+values ('Fernando','fernando@gmail.com','321','Comum'),
+	   ('Helena','helena@gmail.com','321','Comum')
+
+insert into CONVITES (ID_EVENTO, ID_USUARIO, SITUACAO)
+VALUES (3,3,1)
+
+insert into CONVITES (ID_EVENTO, ID_USUARIO, SITUACAO)
+VALUES (3,1,1),
+		(3,4,1)
+
+SELECT C.ID AS ID_CONVITE
+	,C.SITUACAO
+	,E.ID AS ID_EVENTO
+	,E.TITULO AS TITULO_EVENTO
+	,E.DATA_EVENTO AS DATA_EVENTO
+	,U.ID AS ID_USUARIO
+	,U.NOME AS NOME_USUARIO
+	,U.EMAIL AS EMAIL_USUARIO
+	,TE.ID AS ID_TIPO_EVENTO
+	,TE.TITULO AS TITULO_TIPO_EVENTO
+FROM
+CONVITES C 
+INNER JOIN EVENTOS E
+ON C.ID_EVENTO = E.ID 
+INNER JOIN USUARIOS U
+ON C.ID_USUARIO = U.ID
+INNER JOIN TIPOS_EVENTOS TE
+ON E.ID_TIPO_EVENTO = TE.ID;
+
+
+
+
+
+SELECT C.ID AS ID_CONVITE
+	            ,C.SITUACAO
+	            ,E.ID AS ID_EVENTO
+	            ,E.TITULO AS TITULO_EVENTO
+	            ,U.ID AS ID_USUARIO
+	            ,U.NOME AS NOME_USUARIO
+	            ,U.EMAIL AS EMAIL_USUARIO
+                FROM
+                CONVITES C 
+                INNER JOIN EVENTOS E
+                ON C.ID_EVENTO = E.ID 
+                INNER JOIN USUARIOS U
+                ON C.ID_USUARIO = U.ID
+                INNER JOIN TIPOS_EVENTOS TE
+                ON E.ID_TIPO_EVENTO = TE.ID;

@@ -61,3 +61,11 @@ CREATE TABLE CONVITES (
 	,ID_EVENTO INT FOREIGN KEY REFERENCES EVENTOS (ID)
 	,SITUACAO CHAR (1)
 );
+
+
+
+INSERT INTO TIPOS_EVENTOS (TITULO)
+VALUES ('Tecnologia'),
+		('Redes'),
+		('Desenvolvimento'),
+		('Design')
